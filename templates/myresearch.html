@@ -1,0 +1,18 @@
+<h1>My Research</h1>
+<p>แนวทาง: การใช้ SVM กับ Wi-Fi sensing เพื่อการวิเคราะห์สุขภาพ</p>
+
+<!-- ปุ่มเพิ่มอ้างอิง -->
+<a href="/reference">
+  <button type="button">เพิ่มข้อมูลอ้างอิง</button>
+</a>
+
+<h2>References (IEEE Style)</h2>
+<ul>
+  {% for ref in references %}
+    <li>
+      [{{ loop.index }}] {{ ref.title }}
+      — <a href="{{ ref.pdf_url }}" target="_blank">PDF</a>
+      — <a href="/delete/{{ ref.id }}" onclick="return confirm('ลบรายการนี้หรือไม่?');">ลบ</a>
+    </li>
+  {% endfor %}
+</ul>

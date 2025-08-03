@@ -1,0 +1,12 @@
+<h1>Manage References</h1>
+<form method="POST">
+  <input name="title" placeholder="Paper Title">
+  <input name="pdf_url" placeholder="PDF URL">
+  <button type="submit">Add</button>
+</form>
+<ul>
+  {% for ref in references %}
+    <li>{{ ref.title }} <a href="{{ ref.pdf_url }}" target="_blank">PDF</a>
+    <a href="/delete/{{ ref.id }}">Delete</a></li>
+  {% endfor %}
+</ul>
